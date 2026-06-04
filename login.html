@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Elyra</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<section class="auth-section">
+  <div class="auth-box">
+    <h1>Login</h1>
+
+    <form id="loginForm">
+
+      <input type="email" id="loginEmail" placeholder="Enter Gmail">
+      <small class="error" id="loginEmailError"></small>
+
+      <div class="password-box">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <i class="fa fa-eye" id="toggleLoginPassword"></i>
+      </div>
+      <small class="error" id="loginPasswordError"></small>
+
+      <button class="btn" type="submit">Login</button>
+
+    </form>
+  </div>
+</section>
+
+<script>
+const email = document.getElementById("loginEmail");
+const password = document.getElementById("loginPassword");
+
+const emailError = document.getElementById("loginEmailError");
+const passwordError = document.getElementById("loginPasswordError");
+
+// validation
+document.getElementById("loginForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let valid = true;
+
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+  const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}$/;
+
+  emailError.textContent = "";
+  passwordError.textContent = "";
+
+  if(!emailPattern.test(email.value)){
+    emailError.textContent = "Enter valid Gmail (@gmail.com)";
+    valid = false;
+  }
+
+  if(!passwordPattern.test(password.value)){
+    passwordError.textContent = "Password must have uppercase, lowercase, symbol & 8+ chars";
+    valid = false;
+  }
+
+  if(valid){
+    alert("Login Successful ✅");
+    window.location.href = "index.html";
+  }
+});
+
+// eye toggle
+document.getElementById("toggleLoginPassword").onclick = () => {
+  password.type = password.type === "password" ? "text" : "password";
+};
+</script>
+
+</body>
+</html>

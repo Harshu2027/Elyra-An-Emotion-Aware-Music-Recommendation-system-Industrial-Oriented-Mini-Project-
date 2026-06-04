@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elyra - Emotion Detection</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
+  <script defer src="camera.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">Elyra</a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CAMERA SECTION -->
+  <main>
+    <section id="cameraSection">
+      <h1>Show your expression!</h1>
+      <div style="position: relative; display: inline-block;">
+        <video id="webcam" autoplay muted width="400" height="300"></video>
+        <canvas id="overlayCanvas" width="400" height="300" style="position: absolute; top: 0; left: 0;"></canvas>
+      </div>
+      <p id="detectedEmotion">Detecting Emotion...</p>
+    </section>
+
+    <!-- SONG LIST -->
+    <section id="songSection" class="hidden">
+      <h2>Songs for You</h2>
+      <ul id="songList"></ul>
+    </section>
+  </main>
+
+</body>
+</html>

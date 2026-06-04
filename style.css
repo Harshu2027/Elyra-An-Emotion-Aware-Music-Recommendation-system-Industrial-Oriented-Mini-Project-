@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  padding: 15px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #00e0ff;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00e0ff;
+}
+
+/* BUTTONS */
+.nav-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-btn {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid #00e0ff;
+  background: transparent;
+  color: #00e0ff;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background: #00e0ff;
+  color: black;
+}
+
+/* BACKGROUND VIDEO */
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+}
+
+/* SECTIONS */
+section {
+  min-height: 100vh;
+  padding: 100px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* HERO */
+.hero {
+  margin-top: 80px;
+  align-items: flex-end;
+}
+
+.content {
+  max-width: 500px;
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.content p {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+/* BUTTON */
+.btn {
+  padding: 12px 28px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #00e0ff;
+  color: black;
+  box-shadow: 0 0 15px #00e0ff;
+}
+
+/* CAMERA SECTION */
+#cameraSection {
+  display: none;
+  text-align: center;
+  background: rgba(0,0,0,0.85);
+  margin: 20px auto;
+}
+
+#webcam, canvas {
+  width: 400px;
+  height: 300px;
+  border: 2px solid #00e0ff;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+/* SONG LIST */
+#songSection.hidden {
+  display: none;
+}
+
+#songList {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+#songList li {
+  margin: 5px 0;
+  font-weight: bold;
+  color: #00e0ff;
+  cursor: pointer;
+}
+
+#songList li:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #00e0ff;
+}
+
+/* RESULT */
+#result {
+  display: none;
+  text-align: center;
+  background: #050505;
+}
+
+#emotionText {
+  color: #00e0ff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* FOOTER */
+.footer {
+  background: rgba(0,0,0,0.9);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: #aaa;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #00e0ff;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero {
+    align-items: center;
+    text-align: center;
+  }
+
+  #webcam, canvas {
+    width: 300px;
+    height: 225px;
+  }
+}
+
+/* AUTH PAGES */
+.auth-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.auth-box {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0,224,255,0.3);
+}
+
+.auth-box h1 {
+  margin-bottom: 20px;
+  color: #00e0ff;
+}
+
+.auth-box input {
+  width: 250px;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+/* ERROR TEXT */
+.error {
+  color: #ff4d4d;
+  font-size: 12px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* PASSWORD ICON */
+.password-box {
+  position: relative;
+}
+
+.password-box i {
+  position: absolute;
+  right: 15px;
+  top: 35%;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.password-box i:hover {
+  color: #00e0ff;
+}
